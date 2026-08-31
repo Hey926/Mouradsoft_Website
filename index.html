@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mouradsoft builds Mubuntu, desktop software, and mobile applications for high-performance work."
+    />
+    <title>Mouradsoft | Operating Systems, Desktop Software, Mobile Apps</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header" data-elevate>
+      <a class="brand" href="#top" aria-label="Mouradsoft home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" role="img">
+            <path d="M18 3 32 11v14L18 33 4 25V11L18 3Z" />
+            <path d="M11 22V12l7 7 7-7v10" />
+          </svg>
+        </span>
+        <span>Mouradsoft</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#platform">Platform</a>
+        <a href="#products">Products</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#edge">Edge</a>
+      </nav>
+
+      <a class="header-action" href="#showcase">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14" />
+          <path d="m13 6 6 6-6 6" />
+        </svg>
+        Explore
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" data-parallax="0.16">
+          <img src="./assets/mouradsoft-hero.png" alt="Mubuntu operating system displayed on a premium workstation" />
+        </div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">OS / DESKTOP / MOBILE</p>
+          <h1 id="hero-title" aria-label="Mouradsoft"><span>Mouradsoft</span></h1>
+          <p class="hero-copy">
+            Dark-edge productivity systems for teams that want command-level control, visual speed,
+            and a unified software stack from workstation to phone.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#products">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v11H4z" />
+                <path d="M9 21h6" />
+                <path d="M12 16v5" />
+              </svg>
+              Products
+            </a>
+            <a class="button button-secondary" href="#showcase">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 12h18" />
+                <path d="M12 3v18" />
+                <path d="M5 5l14 14" />
+                <path d="M19 5 5 19" />
+              </svg>
+              Visuals
+            </a>
+          </div>
+        </div>
+        <div class="hero-strip" aria-label="Platform highlights">
+          <span>Flagship OS: Mubuntu</span>
+          <span>Native desktop workflows</span>
+          <span>Secure mobile extensions</span>
+        </div>
+      </section>
+
+      <section class="section platform-section" id="platform" aria-labelledby="platform-title">
+        <div class="section-heading">
+          <p class="eyebrow">Unified Stack</p>
+          <h2 id="platform-title">Built for fast rooms and quiet work.</h2>
+        </div>
+        <div class="metrics" id="metrics" aria-label="Mouradsoft platform metrics"></div>
+      </section>
+
+      <section class="section products-section" id="products" aria-labelledby="products-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Product Lines</p>
+          <h2 id="products-title">One design language across every screen.</h2>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="section showcase-section" id="showcase" aria-labelledby="showcase-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Interactive Showcase</p>
+            <h2 id="showcase-title">Product imagery that responds to intent.</h2>
+          </div>
+          <div class="showcase-controls" id="showcase-tabs" aria-label="Showcase filters"></div>
+        </div>
+        <div class="showcase-grid" id="showcase-grid"></div>
+      </section>
+
+      <section class="section edge-section" id="edge" aria-labelledby="edge-title">
+        <div class="edge-panel">
+          <div class="edge-copy">
+            <p class="eyebrow">Mouradsoft Edge</p>
+            <h2 id="edge-title">Gaming responsiveness, office discipline.</h2>
+            <p>
+              Mubuntu anchors the platform with disciplined security, desktop-grade app surfaces,
+              and visual telemetry that keeps work readable under pressure.
+            </p>
+          </div>
+          <div class="edge-stack" id="edge-stack" aria-label="Core capabilities"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="image-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-backdrop" type="button" data-close-modal aria-label="Close product image"></button>
+      <article class="modal-panel">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close product image">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12" />
+            <path d="M18 6 6 18" />
+          </svg>
+        </button>
+        <div class="modal-image-wrap">
+          <img id="modal-image" alt="" />
+        </div>
+        <div class="modal-copy">
+          <p class="eyebrow" id="modal-kicker"></p>
+          <h3 id="modal-title"></h3>
+          <p id="modal-description"></p>
+          <div class="modal-actions">
+            <button class="icon-button" type="button" id="modal-prev" aria-label="Previous image">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="icon-button" type="button" id="modal-next" aria-label="Next image">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
