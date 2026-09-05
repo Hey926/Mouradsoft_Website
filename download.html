@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Download Mubuntu, a custom Yocto-built Linux distribution from Mouradsoft."
+    />
+    <title>Download Mubuntu | Mouradsoft</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="download-page">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header is-elevated" data-elevate>
+      <a class="brand" href="./index.html" aria-label="Mouradsoft home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" role="img">
+            <path d="M18 3 32 11v14L18 33 4 25V11L18 3Z" />
+            <path d="M11 22V12l7 7 7-7v10" />
+          </svg>
+        </span>
+        <span>Mouradsoft</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="./index.html#platform">Platform</a>
+        <a href="./index.html#products">Products</a>
+        <a href="./index.html#showcase">Showcase</a>
+        <a href="./api.html">API</a>
+        <a href="./download.html" aria-current="page">Download</a>
+      </nav>
+
+      <a class="header-action" href="#download">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v12" />
+          <path d="m7 10 5 5 5-5" />
+          <path d="M5 21h14" />
+        </svg>
+        Get ISO
+      </a>
+    </header>
+
+    <main>
+      <section class="download-hero" aria-labelledby="download-title">
+        <div class="download-hero-copy">
+          <p class="eyebrow">Yocto-built Linux distribution</p>
+          <h1 id="download-title"><span>Mubuntu</span></h1>
+          <p class="hero-copy">
+            A custom Linux system from Mouradsoft, built for focused desktop work,
+            reliable embedded-style composition, and clean long-term maintainability.
+          </p>
+          <div class="release-pill" aria-label="Current stable release">
+            <span>Stable</span>
+            <strong id="stable-version">Mubuntu 1.0.0</strong>
+            <small>ISO image</small>
+          </div>
+        </div>
+        <div class="download-terminal" aria-label="Mubuntu release details">
+          <div class="terminal-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <pre><code>$ mubuntu-release --channel stable
+name: Mubuntu
+builder: Yocto Project
+version: 1.0.0
+status: ready for flashing</code></pre>
+        </div>
+      </section>
+
+      <section class="download-shell" id="download" aria-labelledby="primary-download-title">
+        <div class="download-card primary-download">
+          <div>
+            <p class="eyebrow">Primary Download</p>
+            <h2 id="primary-download-title">Download Latest Release (.iso)</h2>
+            <p>
+              Recommended for most PCs and virtual machines. Verify the checksum
+              below before writing the image to USB or deploying it.
+            </p>
+          </div>
+          <a class="download-button" id="primary-download-link" href="./assets/mubuntu-1.0.0-x86_64.iso" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+            <span>Download Latest Release (.iso)</span>
+          </a>
+          <div class="selected-build" id="selected-build" aria-live="polite"></div>
+        </div>
+
+        <aside class="download-card release-notes-card">
+          <p class="eyebrow">Docs</p>
+          <h2>Install with confidence.</h2>
+          <p>
+            Review flashing steps, partition guidance, and known changes before
+            installing Mubuntu on real hardware.
+          </p>
+          <div class="doc-actions">
+            <a class="button button-secondary" href="./docs/installation-guide.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5Z" />
+                <path d="M8 7h6" />
+                <path d="M8 11h7" />
+              </svg>
+              Installation Guide
+            </a>
+            <a class="button button-secondary" href="./docs/release-notes.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v16H4z" />
+                <path d="M8 9h8" />
+                <path d="M8 13h5" />
+              </svg>
+              Release Notes
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section download-section" aria-labelledby="architecture-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Architecture Options</p>
+            <h2 id="architecture-title">Choose the right build.</h2>
+          </div>
+          <label class="build-select-label">
+            <span>Build</span>
+            <select id="build-select" aria-label="Select Mubuntu build"></select>
+          </label>
+        </div>
+        <div class="architecture-grid" id="architecture-grid"></div>
+      </section>
+
+      <section class="section checksum-section" aria-labelledby="checksum-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Verification</p>
+          <h2 id="checksum-title">SHA256 checksums</h2>
+        </div>
+        <div class="checksum-table" id="checksum-table"></div>
+        <p class="checksum-help">
+          Verify with <code>sha256sum mubuntu-1.0.0-x86_64.iso</code> and compare the
+          result with the matching checksum above.
+        </p>
+      </section>
+
+      <section class="section requirements-section" aria-labelledby="requirements-title">
+        <div class="requirements-panel">
+          <div>
+            <p class="eyebrow">System Requirements</p>
+            <h2 id="requirements-title">Minimum hardware</h2>
+          </div>
+          <ul class="requirements-list">
+            <li><strong>CPU</strong><span>64-bit dual-core processor</span></li>
+            <li><strong>Memory</strong><span>4 GB RAM minimum, 8 GB recommended</span></li>
+            <li><strong>Storage</strong><span>32 GB available disk space</span></li>
+            <li><strong>Display</strong><span>1366 x 768 or higher</span></li>
+            <li><strong>Boot</strong><span>UEFI firmware with USB boot support</span></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="./download.js"></script>
+  </body>
+</html>

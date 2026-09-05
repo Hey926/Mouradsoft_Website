@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mouradsoft API documentation, endpoint reference, authentication guide, and interactive code playground."
+    />
+    <title>API Documentation | Mouradsoft</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="api-page">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header is-elevated" data-elevate>
+      <a class="brand" href="./index.html" aria-label="Mouradsoft home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" role="img">
+            <path d="M18 3 32 11v14L18 33 4 25V11L18 3Z" />
+            <path d="M11 22V12l7 7 7-7v10" />
+          </svg>
+        </span>
+        <span>Mouradsoft</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="./index.html#platform">Platform</a>
+        <a href="./index.html#products">Products</a>
+        <a href="./index.html#showcase">Showcase</a>
+        <a href="./api.html" aria-current="page">API</a>
+        <a href="./download.html">Download</a>
+      </nav>
+
+      <a class="header-action" href="#playground">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 9h8" />
+          <path d="M8 15h5" />
+          <path d="M4 4h16v16H4z" />
+        </svg>
+        Console
+      </a>
+    </header>
+
+    <main>
+      <section class="api-hero" aria-labelledby="api-title">
+        <div class="api-hero-copy">
+          <p class="eyebrow">Developer Platform</p>
+          <h1 id="api-title"><span>Mouradsoft API</span></h1>
+          <p class="hero-copy">
+            Build against authenticated platform services for identity, workspace data,
+            telemetry, and event automation with predictable status codes and typed payloads.
+          </p>
+        </div>
+        <div class="api-hero-status" aria-label="API status summary">
+          <article>
+            <span>Base URL</span>
+            <code>https://api.mouradsoft.com</code>
+          </article>
+          <article>
+            <span>Version</span>
+            <strong>v1</strong>
+          </article>
+          <article>
+            <span>Auth</span>
+            <strong>Bearer token</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="api-shell" aria-label="API documentation layout">
+        <aside class="api-sidebar" aria-label="API sections">
+          <details class="api-mobile-nav" open>
+            <summary>API sections</summary>
+            <nav aria-label="Mobile API navigation">
+              <a href="#authentication">Authentication</a>
+              <a href="#limits">Rate Limits &amp; Errors</a>
+              <a href="#endpoints">Available Endpoints</a>
+              <a href="#auth-endpoint">POST /v1/auth</a>
+              <a href="#data-endpoint">GET /v1/data</a>
+              <a href="#events-endpoint">POST /v1/events</a>
+            </nav>
+          </details>
+
+          <nav class="api-nav" aria-label="API navigation">
+            <span class="api-nav-label">Core</span>
+            <a href="#authentication">Authentication</a>
+            <a href="#limits">Rate Limits &amp; Errors</a>
+            <a href="#endpoints">Available Endpoints</a>
+            <span class="api-nav-label">Routes</span>
+            <a href="#auth-endpoint">POST /v1/auth</a>
+            <a href="#data-endpoint">GET /v1/data</a>
+            <a href="#events-endpoint">POST /v1/events</a>
+          </nav>
+        </aside>
+
+        <div class="api-content">
+          <section class="api-doc-section" id="authentication" aria-labelledby="authentication-title">
+            <p class="eyebrow">Authentication</p>
+            <h2 id="authentication-title">Pass a bearer token with every request.</h2>
+            <p>
+              Use a server-side API key to request a short-lived access token, then send
+              that token through the <code>Authorization</code> header. Client applications
+              should never ship private API keys.
+            </p>
+            <div class="api-callout">
+              <code>Authorization: Bearer ms_live_eyJhbGciOi...</code>
+              <span>Tokens expire after 60 minutes and can be refreshed through the auth endpoint.</span>
+            </div>
+          </section>
+
+          <section class="api-doc-section" id="limits" aria-labelledby="limits-title">
+            <p class="eyebrow">Rate Limits &amp; Errors</p>
+            <h2 id="limits-title">Status codes are consistent across services.</h2>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Meaning</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>200</code></td>
+                    <td>Request completed successfully.</td>
+                    <td>Read the returned resource or pagination cursor.</td>
+                  </tr>
+                  <tr>
+                    <td><code>400</code></td>
+                    <td>Payload validation failed.</td>
+                    <td>Check required fields, enum values, and malformed JSON.</td>
+                  </tr>
+                  <tr>
+                    <td><code>401</code></td>
+                    <td>Missing, expired, or invalid credentials.</td>
+                    <td>Refresh the token or verify the bearer header.</td>
+                  </tr>
+                  <tr>
+                    <td><code>429</code></td>
+                    <td>Rate limit exceeded.</td>
+                    <td>Back off and retry after the returned reset timestamp.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="api-doc-section" id="endpoints" aria-labelledby="endpoints-title">
+            <p class="eyebrow">Available Endpoints</p>
+            <h2 id="endpoints-title">Service categories for platform integration.</h2>
+            <div class="endpoint-category-grid">
+              <article>
+                <span>Identity</span>
+                <strong>Tokens, sessions, and account scopes</strong>
+              </article>
+              <article>
+                <span>Data</span>
+                <strong>Workspace records, devices, and synced resources</strong>
+              </article>
+              <article>
+                <span>Events</span>
+                <strong>Telemetry ingestion and automation hooks</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="endpoint-section" id="auth-endpoint" aria-labelledby="auth-endpoint-title">
+            <div class="endpoint-heading">
+              <span class="method method-post">POST</span>
+              <h2 id="auth-endpoint-title">/v1/auth</h2>
+            </div>
+            <p>Exchange a private API key for a short-lived bearer token scoped to a workspace.</p>
+
+            <h3>Request Parameters</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>api_key</code></td>
+                    <td>string</td>
+                    <td>Required</td>
+                    <td>Server-side key issued from the Mouradsoft developer console.</td>
+                  </tr>
+                  <tr>
+                    <td><code>workspace_id</code></td>
+                    <td>string</td>
+                    <td>Required</td>
+                    <td>Workspace identifier for the session scope.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Response Fields</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>access_token</code></td>
+                    <td>string</td>
+                    <td>Bearer token used for subsequent API calls.</td>
+                  </tr>
+                  <tr>
+                    <td><code>expires_in</code></td>
+                    <td>number</td>
+                    <td>Token lifetime in seconds.</td>
+                  </tr>
+                  <tr>
+                    <td><code>scope</code></td>
+                    <td>string</td>
+                    <td>Granted permissions for the token.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="endpoint-section" id="data-endpoint" aria-labelledby="data-endpoint-title">
+            <div class="endpoint-heading">
+              <span class="method method-get">GET</span>
+              <h2 id="data-endpoint-title">/v1/data</h2>
+            </div>
+            <p>Read workspace resources with cursor pagination and optional type filtering.</p>
+
+            <h3>Request Parameters</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>type</code></td>
+                    <td>string</td>
+                    <td>Optional</td>
+                    <td>Filter records by <code>device</code>, <code>project</code>, or <code>document</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><code>limit</code></td>
+                    <td>number</td>
+                    <td>Optional</td>
+                    <td>Number of records to return. Defaults to 25, maximum 100.</td>
+                  </tr>
+                  <tr>
+                    <td><code>cursor</code></td>
+                    <td>string</td>
+                    <td>Optional</td>
+                    <td>Pagination cursor returned by the previous response.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Response Fields</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>items</code></td>
+                    <td>array</td>
+                    <td>Matching resources for the workspace.</td>
+                  </tr>
+                  <tr>
+                    <td><code>next_cursor</code></td>
+                    <td>string | null</td>
+                    <td>Cursor for the next page when more data is available.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="endpoint-section" id="events-endpoint" aria-labelledby="events-endpoint-title">
+            <div class="endpoint-heading">
+              <span class="method method-post">POST</span>
+              <h2 id="events-endpoint-title">/v1/events</h2>
+            </div>
+            <p>Send operational events from desktop agents, mobile apps, or automation services.</p>
+
+            <h3>Request Parameters</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>event_type</code></td>
+                    <td>string</td>
+                    <td>Required</td>
+                    <td>Namespaced event key such as <code>device.booted</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><code>source</code></td>
+                    <td>string</td>
+                    <td>Required</td>
+                    <td>Originating application, device, or integration name.</td>
+                  </tr>
+                  <tr>
+                    <td><code>payload</code></td>
+                    <td>object</td>
+                    <td>Required</td>
+                    <td>Structured event data. Nested JSON objects are supported.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Response Fields</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>event_id</code></td>
+                    <td>string</td>
+                    <td>Unique identifier assigned to the accepted event.</td>
+                  </tr>
+                  <tr>
+                    <td><code>received_at</code></td>
+                    <td>string</td>
+                    <td>ISO 8601 timestamp for ingestion time.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <aside class="api-console" id="playground" aria-labelledby="playground-title">
+          <div class="console-panel">
+            <div class="console-header">
+              <div>
+                <p class="eyebrow">Playground</p>
+                <h2 id="playground-title">Code console</h2>
+              </div>
+              <span class="console-status">Mock</span>
+            </div>
+
+            <label class="console-select-label">
+              <span>Endpoint</span>
+              <select id="endpoint-select" aria-label="Select API endpoint">
+                <option value="auth">POST /v1/auth</option>
+                <option value="data">GET /v1/data</option>
+                <option value="events">POST /v1/events</option>
+              </select>
+            </label>
+
+            <div class="console-tabs" id="language-tabs" role="tablist" aria-label="Code language">
+              <button class="tab-button is-active" type="button" data-language="curl" role="tab" aria-selected="true">cURL</button>
+              <button class="tab-button" type="button" data-language="javascript" role="tab" aria-selected="false">JavaScript</button>
+              <button class="tab-button" type="button" data-language="python" role="tab" aria-selected="false">Python</button>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span id="request-label">Request</span>
+                <button class="icon-button code-copy" type="button" data-copy-target="request-code" aria-label="Copy request code">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 8h10v12H8z" />
+                    <path d="M6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                </button>
+              </div>
+              <pre><code id="request-code"></code></pre>
+            </div>
+
+            <div class="console-tabs response-tabs" id="response-tabs" role="tablist" aria-label="Response state">
+              <button class="tab-button is-active" type="button" data-response="success" role="tab" aria-selected="true">200 OK</button>
+              <button class="tab-button" type="button" data-response="error" role="tab" aria-selected="false">Error</button>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span id="response-label">Response</span>
+                <button class="icon-button code-copy" type="button" data-copy-target="response-code" aria-label="Copy response JSON">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 8h10v12H8z" />
+                    <path d="M6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                </button>
+              </div>
+              <pre><code id="response-code"></code></pre>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./api.js"></script>
+  </body>
+</html>
