@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mubuntu Minimal is a lightweight Mouradsoft Linux distribution for edge computing, automation, containers, and local API hooks."
+    />
+    <title>Mubuntu Minimal | Mouradsoft</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="api-page minimal-page">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header is-elevated" data-elevate>
+      <a class="brand" href="./index.html" aria-label="Mouradsoft home">
+        <span class="brand-mark" aria-hidden="true">
+          <img class="brand-logo" src="./assets/logo.png" alt="" width="34" height="34" />
+        </span>
+        <span>Mouradsoft</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="./index.html#platform">Platform</a>
+        <a href="./index.html#products">Products</a>
+        <a href="./index.html#showcase">Showcase</a>
+        <a href="./minimal.html" aria-current="page">Minimal</a>
+        <a href="./api.html">API</a>
+        <a href="./download.html">Download</a>
+      </nav>
+
+      <a class="header-action" href="#downloads">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v12" />
+          <path d="m7 10 5 5 5-5" />
+          <path d="M5 21h14" />
+        </svg>
+        Images
+      </a>
+    </header>
+
+    <main>
+      <section class="api-hero minimal-hero" aria-labelledby="minimal-title">
+        <div class="api-hero-copy">
+          <p class="eyebrow">Bare-metal / Edge / Containers</p>
+          <h1 id="minimal-title"><span>Mubuntu Minimal</span></h1>
+          <p class="hero-copy">
+            A bare-bones Mouradsoft Linux distribution built for edge devices,
+            automation runners, container hosts, and local API-controlled deployments.
+          </p>
+          <div class="minimal-hero-actions" aria-label="Mubuntu Minimal quick actions">
+            <a class="button button-primary" href="#downloads">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              Downloads
+            </a>
+            <a class="button button-secondary" href="#hooks">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v16H4z" />
+                <path d="M8 9h8" />
+                <path d="M8 13h5" />
+              </svg>
+              API Hooks
+            </a>
+          </div>
+        </div>
+        <div class="minimal-status-grid" aria-label="Mubuntu Minimal release summary">
+          <article>
+            <span>Footprint</span>
+            <strong>Sub-700 MB image</strong>
+          </article>
+          <article>
+            <span>Runtime</span>
+            <strong>systemd + containers</strong>
+          </article>
+          <article>
+            <span>API</span>
+            <strong>Local repository hooks</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="api-shell minimal-shell" aria-label="Mubuntu Minimal documentation layout">
+        <aside class="api-sidebar" aria-label="Mubuntu Minimal sections">
+          <details class="api-mobile-nav" open>
+            <summary>Mubuntu Minimal index</summary>
+            <nav aria-label="Mobile Mubuntu Minimal navigation">
+              <a href="#introduction" data-section-link="introduction">Introduction</a>
+              <a href="#requirements" data-section-link="requirements">System Requirements</a>
+              <a href="#installation" data-section-link="installation">Installation</a>
+              <a href="#features" data-section-link="features">Distro Features</a>
+              <a href="#hooks" data-section-link="hooks">API Hooks</a>
+              <a href="#downloads" data-section-link="downloads">Downloads</a>
+            </nav>
+          </details>
+
+          <nav class="api-nav minimal-nav" aria-label="Mubuntu Minimal navigation">
+            <span class="minimal-badge">Mubuntu Minimal</span>
+            <span class="api-nav-label">Docs</span>
+            <a href="#introduction" data-section-link="introduction">Introduction</a>
+            <a href="#requirements" data-section-link="requirements">System Requirements</a>
+            <a href="#installation" data-section-link="installation">Installation</a>
+            <a href="#features" data-section-link="features">Distro Features</a>
+            <a href="#hooks" data-section-link="hooks">API Hooks</a>
+            <span class="api-nav-label">Downloads</span>
+            <a href="#downloads" data-section-link="downloads">Images &amp; Installers</a>
+          </nav>
+        </aside>
+
+        <div class="api-content">
+          <section class="api-doc-section" id="introduction" aria-labelledby="introduction-title" data-doc-section>
+            <p class="eyebrow">Introduction</p>
+            <h2 id="introduction-title">Small enough for the edge, structured enough for automation.</h2>
+            <p>
+              Mubuntu Minimal is the stripped-down Mouradsoft distribution for
+              headless devices, CI runners, container nodes, and controlled workstation
+              bases. It ships a minimal userspace, a tuned kernel profile, and a local
+              repository API so provisioning scripts can inspect updates before applying them.
+            </p>
+            <div class="minimal-metrics" aria-label="Mubuntu Minimal highlights">
+              <article><strong>64-bit</strong><span>x86_64 and ARM64 targets</span></article>
+              <article><strong>SSH-ready</strong><span>Remote-first install path</span></article>
+              <article><strong>OCI</strong><span>Container runtime profile</span></article>
+            </div>
+          </section>
+
+          <section class="api-doc-section" id="requirements" aria-labelledby="requirements-title" data-doc-section>
+            <p class="eyebrow">System Requirements</p>
+            <h2 id="requirements-title">Designed for small machines and repeatable images.</h2>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Resource</th>
+                    <th scope="col">Minimum</th>
+                    <th scope="col">Recommended</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CPU</td>
+                    <td>64-bit single-core processor</td>
+                    <td>64-bit dual-core processor with virtualization support</td>
+                  </tr>
+                  <tr>
+                    <td>Memory</td>
+                    <td>512 MB RAM</td>
+                    <td>2 GB RAM for container workloads</td>
+                  </tr>
+                  <tr>
+                    <td>Storage</td>
+                    <td>4 GB available disk</td>
+                    <td>16 GB SSD or eMMC</td>
+                  </tr>
+                  <tr>
+                    <td>Network</td>
+                    <td>Ethernet or Wi-Fi adapter</td>
+                    <td>Wired network for unattended installs</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="api-doc-section" id="installation" aria-labelledby="installation-title" data-doc-section>
+            <p class="eyebrow">Installation</p>
+            <h2 id="installation-title">Boot, provision, and enroll the node.</h2>
+            <ol class="minimal-steps">
+              <li>
+                <strong>Write the image</strong>
+                <span>Flash the ISO or Live USB installer to removable media.</span>
+              </li>
+              <li>
+                <strong>Boot minimal mode</strong>
+                <span>Select headless install, live shell, or container host profile.</span>
+              </li>
+              <li>
+                <strong>Enroll repository access</strong>
+                <span>Register a local token so update scripts can call the built-in API hooks.</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="api-doc-section" id="features" aria-labelledby="features-title" data-doc-section>
+            <p class="eyebrow">Distro Features</p>
+            <h2 id="features-title">The default surface is intentionally narrow.</h2>
+            <div class="endpoint-category-grid">
+              <article>
+                <span>Ultra-small footprint</span>
+                <strong>Minimal package set with only boot, network, shell, and service primitives.</strong>
+              </article>
+              <article>
+                <span>Minimal kernel</span>
+                <strong>Lean kernel profile tuned for edge hardware, containers, and predictable boot.</strong>
+              </article>
+              <article>
+                <span>Repository API</span>
+                <strong>Local hooks expose package lists, kernel updates, and node statistics.</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="endpoint-section" id="hooks" aria-labelledby="hooks-title" data-doc-section>
+            <div class="endpoint-heading">
+              <span class="method method-get">GET</span>
+              <h2 id="hooks-title">/minimal/v1/repository</h2>
+            </div>
+            <p>
+              Query the configured Mubuntu Minimal repository mirror for package,
+              kernel, and system state before starting an unattended update.
+            </p>
+
+            <h3>Request Parameters</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>channel</code></td>
+                    <td>string</td>
+                    <td>Required</td>
+                    <td>Repository channel: <code>stable</code>, <code>testing</code>, or <code>edge</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><code>arch</code></td>
+                    <td>string</td>
+                    <td>Optional</td>
+                    <td>Target architecture. Defaults to the local system architecture.</td>
+                  </tr>
+                  <tr>
+                    <td><code>include_stats</code></td>
+                    <td>boolean</td>
+                    <td>Optional</td>
+                    <td>Include CPU, memory, uptime, and package cache statistics.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Response Parameters</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>packages</code></td>
+                    <td>array</td>
+                    <td>Available package names, versions, and repository origins.</td>
+                  </tr>
+                  <tr>
+                    <td><code>kernel_update</code></td>
+                    <td>object</td>
+                    <td>Current kernel, available kernel, and reboot requirement.</td>
+                  </tr>
+                  <tr>
+                    <td><code>system_stats</code></td>
+                    <td>object | null</td>
+                    <td>Optional local node statistics when requested.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Status Codes</h3>
+            <div class="api-table-wrap">
+              <table class="api-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Meaning</th>
+                    <th scope="col">Resolution</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>200</code></td>
+                    <td>Repository metadata returned successfully.</td>
+                    <td>Proceed with package selection or staged updates.</td>
+                  </tr>
+                  <tr>
+                    <td><code>400</code></td>
+                    <td>Invalid channel, architecture, or query parameter.</td>
+                    <td>Correct the request and retry.</td>
+                  </tr>
+                  <tr>
+                    <td><code>401</code></td>
+                    <td>Missing or invalid local repository token.</td>
+                    <td>Enroll the node token before requesting metadata.</td>
+                  </tr>
+                  <tr>
+                    <td><code>500</code></td>
+                    <td>Local repository service failed.</td>
+                    <td>Inspect service logs and retry after recovery.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="api-doc-section" id="downloads" aria-labelledby="downloads-title" data-doc-section>
+            <p class="eyebrow">Downloads</p>
+            <h2 id="downloads-title">Install images for minimal deployments.</h2>
+            <div class="minimal-download-grid">
+              <a class="download-button" href="./download.html#download">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+                ISO image
+              </a>
+              <a class="button button-secondary" href="./download.html#checksum-title">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M8 8h8" />
+                  <path d="M8 12h8" />
+                  <path d="M8 16h5" />
+                </svg>
+                Torrent
+              </a>
+              <a class="button button-secondary" href="./download.html#architecture-title">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 3h12v18H6z" />
+                  <path d="M10 7h4" />
+                  <path d="M10 17h4" />
+                </svg>
+                Live USB installer
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <aside class="api-console" id="playground" aria-labelledby="terminal-title">
+          <div class="console-panel minimal-console">
+            <div class="console-header">
+              <div>
+                <p class="eyebrow">Repository API</p>
+                <h2 id="terminal-title">Terminal console</h2>
+              </div>
+              <span class="console-status">Local mock</span>
+            </div>
+
+            <label class="console-select-label">
+              <span>Response</span>
+              <select id="minimal-response-select" aria-label="Select mock API response">
+                <option value="packages">Package list</option>
+                <option value="kernel">Kernel update</option>
+                <option value="stats">System statistics</option>
+              </select>
+            </label>
+
+            <div class="console-tabs" id="minimal-language-tabs" role="tablist" aria-label="Terminal language">
+              <button class="tab-button is-active" type="button" data-language="bash" role="tab" aria-selected="true">Bash</button>
+              <button class="tab-button" type="button" data-language="curl" role="tab" aria-selected="false">cURL</button>
+              <button class="tab-button" type="button" data-language="python" role="tab" aria-selected="false">Python</button>
+            </div>
+
+            <div class="download-terminal minimal-terminal" aria-label="Mubuntu Minimal terminal command">
+              <div class="terminal-bar" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="code-card-header">
+                <span id="minimal-command-label">Repository request</span>
+                <button class="icon-button code-copy" type="button" data-copy-target="minimal-command-code" aria-label="Copy terminal command">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 8h10v12H8z" />
+                    <path d="M6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                </button>
+              </div>
+              <pre><code id="minimal-command-code"></code></pre>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span id="minimal-response-label">Mock response</span>
+                <button class="icon-button code-copy" type="button" data-copy-target="minimal-response-code" aria-label="Copy mock response JSON">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 8h10v12H8z" />
+                    <path d="M6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+                  </svg>
+                </button>
+              </div>
+              <pre><code id="minimal-response-code"></code></pre>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./minimal.js"></script>
+  </body>
+</html>

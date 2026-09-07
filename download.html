@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Download Mubuntu, a custom Yocto-built Linux distribution from Mouradsoft."
+      content="Download Mubuntu 1.0 Noble Cat and Mubuntu Minimal, custom Linux distributions from Mouradsoft."
     />
-    <title>Download Mubuntu | Mouradsoft</title>
+    <title>Download Mubuntu 1.0 Noble Cat | Mouradsoft</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="download-page">
@@ -17,10 +19,7 @@
     <header class="site-header is-elevated" data-elevate>
       <a class="brand" href="./index.html" aria-label="Mouradsoft home">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 36 36" role="img">
-            <path d="M18 3 32 11v14L18 33 4 25V11L18 3Z" />
-            <path d="M11 22V12l7 7 7-7v10" />
-          </svg>
+          <img class="brand-logo" src="./assets/logo.png" alt="" width="34" height="34" />
         </span>
         <span>Mouradsoft</span>
       </a>
@@ -34,6 +33,7 @@
         <a href="./index.html#platform">Platform</a>
         <a href="./index.html#products">Products</a>
         <a href="./index.html#showcase">Showcase</a>
+        <a href="#minimal-download">Minimal</a>
         <a href="./api.html">API</a>
         <a href="./download.html" aria-current="page">Download</a>
       </nav>
@@ -52,14 +52,14 @@
       <section class="download-hero" aria-labelledby="download-title">
         <div class="download-hero-copy">
           <p class="eyebrow">Yocto-built Linux distribution</p>
-          <h1 id="download-title"><span>Mubuntu</span></h1>
+          <h1 id="download-title"><span>Mubuntu 1.0 Noble Cat</span></h1>
           <p class="hero-copy">
             A custom Linux system from Mouradsoft, built for focused desktop work,
             reliable embedded-style composition, and clean long-term maintainability.
           </p>
           <div class="release-pill" aria-label="Current stable release">
             <span>Stable</span>
-            <strong id="stable-version">Mubuntu 1.0.0</strong>
+            <strong id="stable-version">Mubuntu 1.0 Noble Cat</strong>
             <small>ISO image</small>
           </div>
         </div>
@@ -72,7 +72,7 @@
           <pre><code>$ mubuntu-release --channel stable
 name: Mubuntu
 builder: Yocto Project
-version: 1.0.0
+version: 1.0 Noble Cat
 status: ready for flashing</code></pre>
         </div>
       </section>
@@ -87,7 +87,7 @@ status: ready for flashing</code></pre>
               below before writing the image to USB or deploying it.
             </p>
           </div>
-          <a class="download-button" id="primary-download-link" href="./assets/mubuntu-1.0.0-x86_64.iso" download>
+          <a class="download-button" id="primary-download-link" href="./assets/mubuntu-1.0-noble-cat-x86_64.iso" download>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 3v12" />
               <path d="m7 10 5 5 5-5" />
@@ -126,6 +126,83 @@ status: ready for flashing</code></pre>
         </aside>
       </section>
 
+      <section class="section minimal-download-section" id="minimal-download" aria-labelledby="minimal-download-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Mubuntu Minimal</p>
+            <h2 id="minimal-download-title">Bare-bones images for edge and automation nodes.</h2>
+          </div>
+          <a class="button button-secondary" href="./minimal.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h16v16H4z" />
+              <path d="M8 9h8" />
+              <path d="M8 13h5" />
+            </svg>
+            Full Minimal Page
+          </a>
+        </div>
+
+        <div class="minimal-download-panel">
+          <div class="minimal-download-copy">
+            <span class="minimal-badge">Mubuntu Minimal</span>
+            <h3>Small runtime, full repository control.</h3>
+            <p>
+              Use Mubuntu Minimal for container hosts, CI runners, edge devices,
+              and remote automation targets that need a narrow base system with
+              local update hooks.
+            </p>
+            <div class="selected-build">
+              <span>Sub-700 MB image</span>
+              <span>Minimal kernel profile</span>
+              <span>Repository API hooks</span>
+            </div>
+          </div>
+
+          <div class="minimal-download-actions" aria-label="Mubuntu Minimal download quick links">
+            <a class="download-button" href="./assets/mubuntu-1.0-noble-cat-x86_64-minimal.iso" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              Minimal ISO
+            </a>
+            <a class="button button-secondary" href="#checksum-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v16H4z" />
+                <path d="M8 8h8" />
+                <path d="M8 12h8" />
+                <path d="M8 16h5" />
+              </svg>
+              Torrent
+            </a>
+            <a class="button button-secondary" href="#architecture-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 3h12v18H6z" />
+                <path d="M10 7h4" />
+                <path d="M10 17h4" />
+              </svg>
+              Live USB Installer
+            </a>
+          </div>
+
+          <div class="download-terminal minimal-download-terminal" aria-label="Mubuntu Minimal API hook preview">
+            <div class="terminal-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <pre><code>$ curl "http://127.0.0.1:8721/minimal/v1/repository?channel=stable"
+{
+  "channel": "stable",
+  "packages": 184,
+  "kernel_update": "6.6.24-mubuntu-minimal",
+  "status": "ready"
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
       <section class="section download-section" aria-labelledby="architecture-title">
         <div class="section-heading split">
           <div>
@@ -147,7 +224,7 @@ status: ready for flashing</code></pre>
         </div>
         <div class="checksum-table" id="checksum-table"></div>
         <p class="checksum-help">
-          Verify with <code>sha256sum mubuntu-1.0.0-x86_64.iso</code> and compare the
+          Verify with <code>sha256sum mubuntu-1.0-noble-cat-x86_64.iso</code> and compare the
           result with the matching checksum above.
         </p>
       </section>

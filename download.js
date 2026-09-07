@@ -4,30 +4,30 @@ const builds = [
   {
     architecture: "x86_64",
     label: "Desktop / Laptop",
-    version: "1.0.0",
+    version: "1.0 Noble Cat",
     size: "2.8 GB",
-    file: "mubuntu-1.0.0-x86_64.iso",
-    href: "./assets/mubuntu-1.0.0-x86_64.iso",
+    file: "mubuntu-1.0-noble-cat-x86_64.iso",
+    href: "./assets/mubuntu-1.0-noble-cat-x86_64.iso",
     checksum: "7f3b6b6f9cc4a20ac2f4e2ed8c6b1b00d73ab532d4096f6b8cb1c9e802f7c1a4",
     recommended: true
   },
   {
     architecture: "ARM64",
     label: "ARM boards / UEFI devices",
-    version: "1.0.0",
+    version: "1.0 Noble Cat",
     size: "2.4 GB",
-    file: "mubuntu-1.0.0-arm64.iso",
-    href: "./assets/mubuntu-1.0.0-arm64.iso",
+    file: "mubuntu-1.0-noble-cat-arm64.iso",
+    href: "./assets/mubuntu-1.0-noble-cat-arm64.iso",
     checksum: "e62f8d5455e37fd8d0c8794f7561d7b3bd2e5ce9858a90be3f0d3ba38fa42d91",
     recommended: false
   },
   {
     architecture: "x86_64-minimal",
     label: "Minimal image",
-    version: "1.0.0",
+    version: "1.0 Noble Cat",
     size: "1.6 GB",
-    file: "mubuntu-1.0.0-x86_64-minimal.iso",
-    href: "./assets/mubuntu-1.0.0-x86_64-minimal.iso",
+    file: "mubuntu-1.0-noble-cat-x86_64-minimal.iso",
+    href: "./assets/mubuntu-1.0-noble-cat-x86_64-minimal.iso",
     checksum: "a41d2ad6d08f6bfb05de521fb7b765f5d377b2ff931f0f3cd4f3a40ec2d61476",
     recommended: false
   }
