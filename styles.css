@@ -978,6 +978,31 @@ h1,
   font-size: 0.9rem;
 }
 
+#pre-register {
+  scroll-margin-top: 100px;
+}
+
+.registration-card :focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+#pre-register-button {
+  margin-top: 16px;
+  max-width: 100%;
+  white-space: normal;
+}
+
+#pre-register-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+#pre-register-status {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
 .coming-soon-section {
   width: min(calc(100% - 40px), var(--max));
   margin: 0 auto;
